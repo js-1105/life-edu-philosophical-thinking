@@ -321,6 +321,10 @@ body.no-clickzones .click-zones { display: none; }
 @keyframes secSwing{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
 .slide.section.active .anim-spin{transform-box:fill-box; transform-origin:78px 78px; animation:secSpin 2.8s cubic-bezier(.34,.03,.2,1);}
 .slide.section.active .anim-swing{transform-box:fill-box; transform-origin:100px 54px; animation:secSwing 3.6s ease-in-out infinite;}
+@keyframes coverSymIn{0%{opacity:0; transform:translateY(-50%) scale(.82) rotate(-7deg)}100%{opacity:.06; transform:translateY(-50%) scale(1) rotate(0)}}
+@keyframes coverRingSpin{to{transform:rotate(360deg)}}
+.slide.cover.active .cover-sym{animation:coverSymIn 1.7s cubic-bezier(.2,.72,.2,1) both;}
+.slide.cover.active .cover-sym .ring-dash{transform-box:fill-box; transform-origin:100px 100px; animation:coverRingSpin 44s linear infinite;}
 </style>
 </head>
 <body>
@@ -329,7 +333,12 @@ body.no-clickzones .click-zones { display: none; }
 
 <!-- ============ 封面 ============ -->
 <section class="slide cover active">
-  <p class="lead" style="letter-spacing:.4em;">生命教育概論　·　單元六</p>
+  <svg class="cover-sym" viewBox="0 0 200 200" aria-hidden="true" style="position:absolute; right:7vw; top:50%; transform:translateY(-50%); width:30vw; max-width:440px; opacity:.06; color:var(--accent); pointer-events:none; z-index:0;" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="100" cy="100" r="88" stroke-width="3" opacity=".5"/>
+    <circle class="ring-dash" cx="100" cy="100" r="66" stroke-width="2" opacity=".38" stroke-dasharray="3 10"/>
+    <g stroke-width="7" transform="translate(100 90) scale(1.9)"><path d="M-15 -13 A16 16 0 1 1 3 7 L3 22"/><circle cx="3" cy="38" r="4.5" fill="currentColor" stroke="none"/></g>
+  </svg>
+  <p class="lead" style="letter-spacing:.4em; position:relative; z-index:1;">生命教育概論　·　單元六</p>
   <h1>哲學思考：如何思考人生課題？</h1>
   <div class="ornament"></div>
   <p class="lead">思考的知識與技能．情意態度．後設思考</p>
@@ -346,7 +355,7 @@ body.no-clickzones .click-zones { display: none; }
     <div class="card"><h3>貳　《十二怒漢》</h3><p style="margin:0;">十二個人，一個決定</p></div>
     <div class="card"><h3>參　小組討論</h3><p style="margin:0;">換你當陪審員</p></div>
     <div class="card"><h3>肆　哲學思考的統整</h3><p style="margin:0;">從電影回到方法</p></div>
-    <div class="card"><h3>伍　真相難辨</h3><p style="margin:0;">哲學思考貫穿生命課題</p></div>
+    <div class="card"><h3>伍　貫穿生命課題</h3><p style="margin:0;">哲學思考如何應用在媒體、歷史、信仰</p></div>
     <div class="card"><h3>陸　深化與交棒</h3><p style="margin:0;">心法與整週收束</p></div>
   </div>
 </section>
@@ -862,7 +871,7 @@ body.no-clickzones .click-zones { display: none; }
   </svg>
   <p class="kicker" style="position:relative; z-index:1;">PART FIVE</p>
   <div class="big-num" style="position:relative; z-index:1;">伍</div>
-  <h1 style="position:relative; z-index:1;">真相難辨：哲學思考如何貫穿生命課題</h1>
+  <h1 style="position:relative; z-index:1;">哲學思考，貫穿生命課題</h1>
   <div class="ornament" style="width:120px; height:3px; margin:.55em 0 .75em; background:linear-gradient(90deg,var(--accent2),transparent); position:relative; z-index:1;"></div>
   <p class="sub" style="position:relative; z-index:1;">從媒體、歷史到信仰，真相處處是考驗。</p>
 </section>
