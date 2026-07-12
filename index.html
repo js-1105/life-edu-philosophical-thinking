@@ -1697,6 +1697,7 @@ if (location.hash) {
     maskDuringResize(vf);
     vf.classList.add('zoom');
     document.body.classList.add('has-vzoom');
+    var b = vf.querySelector('.vfs'); if (b) b.textContent = '✕';
   }
   function exit() {
     var vf = zoomedFrame();
@@ -1706,6 +1707,7 @@ if (location.hash) {
     maskDuringResize(vf);
     vf.classList.remove('zoom');
     if (sl) sl.style.transform = sl.dataset.savedT || '';
+    var b = vf.querySelector('.vfs'); if (b) b.textContent = '⛶';
   }
   function toggle(vf) {
     if (vf.classList.contains('zoom')) { exit(); }
